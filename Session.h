@@ -34,15 +34,18 @@ public:
     int dequeueInfected();
     int getListSize() const;
     TreeType getTreeType() const;
-    bool toTerminate();
+    void virusHasSpread();
+    int getCycle() const;
+    bool isInfectedListEmpty();
     int getCycle();
 
 private:
-    int cycle;
     vector<int> infectedList;
     Graph g;
     TreeType treeType;
     std::vector<Agent*> agents;
+    int cycleCounter;
+    bool virusSpread;
 };
 
 #endif

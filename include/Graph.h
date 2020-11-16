@@ -19,6 +19,7 @@ public:
     vector<int> getList();
     int getGraphSize() const;
     void amputate(int toAmputate);
+    void initialize(int node);
     void duplicate(int node);
     bool isHealthy(int node);
     vector<int> getOutput();

@@ -105,3 +105,8 @@ void Graph::setlist() {
         infected_list.push_back(0);
     }
 }
+
+void Graph::initialize(int node) {
+    infected_list[node] = 1;
+}
+

@@ -29,7 +29,9 @@ Session::Session(const std::string& path): infectedList(0), g(), treeType(), age
             addAgent(ContactTracer());
         }
         else{
-            addAgent(Virus(elem[1]));
+            int k = elem[1];
+            addAgent(Virus(k));
+            g.initialize(k);
         }
     }
 }
@@ -116,7 +118,7 @@ void Session::simulate() {
     json output;
     output["graph"] = g.getEdges();
     output["infected"] = g.getOutput();
-    ofstream i("output.json");
+    ofstream i("./output.json");
     i << output;
 }
 
@@ -161,6 +163,7 @@ bool Session::isInfectedListEmpty() {
 void Session::duplicate(int node) {
     g.duplicate(node);
 }
+
 
 
 
